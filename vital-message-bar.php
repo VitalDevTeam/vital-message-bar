@@ -3,7 +3,7 @@
 	Plugin Name: Message Bar
 	Plugin URI: https://github.com/VitalDevTeam/vital-message-bar/
 	Description: Adds a customizable message bar to the site's header.
-	Version: 1.0.0
+	Version: 1.0.1
 	Requires at least: 5.2
 	Requires PHP: 7.0
 	Author: Vital
@@ -231,7 +231,7 @@ class Vital_Message_Bar {
 			if (get_field('vtlmb_dismissable', 'option')) {
 
 				$dismiss_button = sprintf(
-					'<button type="button" id="vtlmb-bar-dismiss" class="vtlmb-bar-dismiss">%s<span class="screen-reader-text">%s</span></button>',
+					'<button type="button" class="vtlmb-bar-dismiss">%s<span class="screen-reader-text">%s</span></button>',
 					$dismiss_icon,
 					__('Dismiss message', 'vital')
 				);
@@ -241,7 +241,7 @@ class Vital_Message_Bar {
 			}
 
 			$output = <<<EOT
-<div id="vtlmb-bar" class="vtlmb-bar{$is_sticky}">
+<div class="vtlmb-bar{$is_sticky}">
 	<div class="vtlmb-bar-container">
 		<div class="vtlmb-bar-wrapper">
 			<p class="vtlmb-bar-message">{$message}{$link}</p>

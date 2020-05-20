@@ -26,18 +26,20 @@
      * Closes message bar and sets cookie.
      */
     function dismissBar() {
-        bar.parentNode.removeChild(bar);
+        for (var i = 0; i < bar.length; i++) {
+            bar[i].parentNode.removeChild(bar[i]);
+        }
         body.classList.remove('vtlmb-message-bar');
         setCookie(VTLMB.cookie_dismissed, '1', parseInt(VTLMB.cookie_expires));
     }
 
     function onDocumentReady() {
         body = document.querySelector('body');
-        bar = document.querySelector('#vtlmb-bar');
-        dismiss = document.querySelector('#vtlmb-bar-dismiss');
+        bar = document.querySelectorAll('.vtlmb-bar');
+        dismiss = document.querySelectorAll('.vtlmb-bar-dismiss');
 
-        if (dismiss) {
-            dismiss.addEventListener('click', dismissBar);
+        for (var i = 0; i < dismiss.length; i++) {
+            dismiss[i].addEventListener('click', dismissBar);
         }
     }
 
