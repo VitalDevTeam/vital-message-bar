@@ -182,7 +182,7 @@ class Vital_Message_Bar {
 		}
 
 		if ($dismiss_focus_color = get_field('vtlmb_dismiss_focus_color', 'option')) {
-			$styles[] = ".vtlmb-bar-dismiss-icon:focus path, .vtlmb-bar-dismiss-icon:hover path { fill: {$dismiss_focus_color}; }";
+			$styles[] = ".vtlmb-bar-dismiss:focus path, .vtlmb-bar-dismiss:hover path { fill: {$dismiss_focus_color}; }";
 		}
 
 		$styles = implode("\n", $styles);
