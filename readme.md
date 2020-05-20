@@ -31,7 +31,7 @@ Customize HTML output.
 Customize dismiss button icon. Use an inline SVG to maintain style link to color picker fields on plugin settings page.
 
 #### Parameters
-**$dismiss_icon** (string) The HTML of the dimiss icon.
+**$dismiss_icon** (string) The HTML of the dismiss icon.
 
 ## Actions
 
