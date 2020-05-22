@@ -6,6 +6,9 @@ A simple WordPress plugin for adding a message bar to the site.
 * WordPress > 5.2
 * Theme must support [wp_body_open](https://developer.wordpress.org/reference/functions/wp_body_open/) hook
 
+## WP Engine Warning
+You must contact WP Engine support and ask them to exclude the `vtlmb_dismissed` cookie from being cached. Otherwise, their system cache will prevent it from being read resulting in the message bar never being dismissed.
+
 ## Hooks
 
 ### vtlmb_enqueue_css
