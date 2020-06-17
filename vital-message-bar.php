@@ -213,7 +213,7 @@ class Vital_Message_Bar {
 					' <span class="vtlmb-bar-link-wrapper"><a href="%s" target="%s" class="vtlmb-bar-link">%s</a></span>',
 					esc_attr($message_link['url']),
 					esc_attr($message_link['target']),
-					esc_attr($message_link['title']),
+					esc_attr($message_link['title'])
 				);
 			} else {
 
