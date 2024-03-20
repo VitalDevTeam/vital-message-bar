@@ -3,7 +3,7 @@
 	Plugin Name: Message Bar
 	Plugin URI: https://github.com/VitalDevTeam/vital-message-bar/
 	Description: Adds a customizable message bar to the site's header.
-	Version: 1.0.1
+	Version: 1.0.2
 	Requires at least: 5.2
 	Requires PHP: 7.0
 	Author: Vital
@@ -36,7 +36,7 @@ class Vital_Message_Bar {
 
 		$this->plugin_path = plugin_dir_path(__FILE__);
 		$this->plugin_url = plugin_dir_url(__FILE__);
-		$this->version = '1.0.0';
+		$this->version = '1.0.2';
 		$this->suffix = (defined('SCRIPT_DEBUG') && SCRIPT_DEBUG) ? '' : '.min';
 		$this->cookie_dismissed = 'vtlmb_dismissed';
 		$this->dismissed = false;
@@ -150,7 +150,6 @@ class Vital_Message_Bar {
 	 * @return void
 	 */
 	public function inline_styles() {
-
 		$styles = [];
 
 		if ($text_color = get_field('vtlmb_text_color', 'option')) {
@@ -185,6 +184,7 @@ class Vital_Message_Bar {
 			$styles[] = ".vtlmb-bar-dismiss:focus path, .vtlmb-bar-dismiss:hover path { fill: {$dismiss_focus_color}; }";
 		}
 
+		$styles = apply_filters('vtlmb_message_bar_styles', $styles);
 		$styles = implode("\n", $styles);
 
 		printf(
